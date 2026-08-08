@@ -1,9 +1,9 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { CheckCircle2 } from "lucide-react";
-import { SERVICES } from "@/data/site";
+import { SERVICES, type Service } from "@/data/site";
 
 export const Route = createFileRoute("/services/$slug")({
-  loader: ({ params }) => {
+  loader: ({ params }): Service => {
     const service = SERVICES.find((s) => s.slug === params.slug);
     if (!service) throw notFound();
     return service;
