@@ -24,7 +24,7 @@ export const Route = createFileRoute("/services/$slug")({
 });
 
 function ServiceDetail() {
-  const service = Route.useLoaderData();
+  const service = Route.useLoaderData() as Service;
 
   return (
     <>
