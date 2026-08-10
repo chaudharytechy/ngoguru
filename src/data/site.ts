@@ -305,54 +305,63 @@ export const TESTIMONIALS = [
 export const BLOGS = [
   {
     slug: "fcra-registration-validity-2026",
+
     category: "Compliance",
     title: "How to Maintain FCRA Registration Validity in 2026",
     excerpt: "A field guide to renewal timelines, reporting duties and common pitfalls.",
   },
   {
     slug: "understanding-csr-funds",
+
     category: "Funding",
     title: "Understanding CSR Funds: A Guide for Small NGOs",
     excerpt: "How corporate social responsibility budgets are allocated, and how to apply.",
   },
   {
     slug: "board-governance-essentials",
+
     category: "Governance",
     title: "Board Governance Essentials Every Trust Should Know",
     excerpt: "Practical steps for accountable, transparent leadership structures.",
   },
   {
     slug: "section-12a-80g-changes",
+
     category: "Compliance",
     title: "Section 12A & 80G: What Changed This Year",
     excerpt: "Key amendments NGOs need to know for tax exemption continuity.",
   },
   {
     slug: "grant-proposal-that-gets-funded",
+
     category: "Funding",
     title: "Writing a Grant Proposal That Gets Funded",
     excerpt: "Structure, tone and data points that make reviewers respond.",
   },
   {
     slug: "annual-filing-checklist-societies",
+
     category: "Compliance",
     title: "Annual Filing Checklist for Registered Societies",
     excerpt: "Every form, deadline and authority you need to track in one place.",
   },
   {
     slug: "measuring-impact-metrics",
+
     category: "Governance",
     title: "Measuring Impact: Metrics That Matter to Funders",
     excerpt: "Choosing indicators that are credible, fundable and honest.",
   },
   {
     slug: "foreign-contribution-rules-simplified",
+
     category: "Compliance",
     title: "Foreign Contribution Rules Simplified",
     excerpt: "A plain-language walkthrough of FCRA do's and don'ts.",
   },
   {
     slug: "audit-ready-finance-function",
+
     category: "Governance",
     title: "Building an Audit-Ready Finance Function",
     excerpt: "Systems and controls that make statutory audits painless.",
