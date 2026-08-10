@@ -7,7 +7,7 @@ const title = "NGO Blogs — Compliance, Funding & Governance Guides | NGOGURU";
 const description =
   "Plain-language guidance on FCRA, CSR funding, 12A/80G, audits and governance for the Indian NGO sector.";
 
-export const Route = createFileRoute("/blogs")({
+export const Route = createFileRoute("/blogs/")({
   head: () => ({
     meta: [
       { title },

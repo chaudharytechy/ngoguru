@@ -7,7 +7,7 @@ const title = "NGO Laws & Advice — Trust, Society, FCRA Acts | NGOGURU";
 const description =
   "Overview of the key laws governing Indian NGOs: Indian Trusts Act, Societies Registration Act, FCRA 2010 and Bombay Public Trusts Act.";
 
-export const Route = createFileRoute("/laws")({
+export const Route = createFileRoute("/laws/")({
   head: () => ({
     meta: [
       { title },

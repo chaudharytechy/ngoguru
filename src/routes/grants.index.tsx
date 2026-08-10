@@ -7,7 +7,7 @@ const title = "Grants & Funding — Live EOIs and RFPs for NGOs | NGOGURU";
 const description =
   "Live EOIs, RFPs and empanelment notices from partner organisations across India — updated as they open.";
 
-export const Route = createFileRoute("/grants")({
+export const Route = createFileRoute("/grants/")({
   head: () => ({
     meta: [
       { title },

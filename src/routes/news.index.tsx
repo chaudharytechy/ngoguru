@@ -7,7 +7,7 @@ const title = "NGO News — Sector Updates from Across India | NGOGURU";
 const description =
   "Curated coverage from India's non-profit and social impact sector: regulation, funding, judgments and programmes.";
 
-export const Route = createFileRoute("/news")({
+export const Route = createFileRoute("/news/")({
   head: () => ({
     meta: [
       { title },
