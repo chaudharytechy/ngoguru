@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, CalendarClock, MapPin, Star } from "lucide-react";
-import { GRANTS, SERVICES, STATS, TESTIMONIALS } from "@/data/site";
+import { SERVICES, STATS, TESTIMONIALS } from "@/data/site";
+import { GRANT_ITEMS } from "@/data/details";
+import { FounderHighlight } from "@/components/FounderHighlight";
 
 const title = "NGOGURU — NGO Registration, Compliance & Funding Consultants";
 const description =
@@ -142,8 +144,8 @@ function Index() {
             </Link>
           </div>
           <div className="mt-8 grid gap-5 md:grid-cols-3">
-            {GRANTS.slice(0, 3).map((g) => (
-              <article key={g.title} className="overflow-hidden rounded-xl bg-card shadow-sm">
+            {GRANT_ITEMS.slice(0, 3).map((g) => (
+              <article key={g.slug} className="overflow-hidden rounded-xl bg-card shadow-sm">
                 <div className="bg-brand-navy-deep p-5 text-primary-foreground">
                   <p className="text-[10px] font-bold tracking-[0.16em] text-brand-green-soft uppercase">
                     NGOGURU · Private Limited
@@ -161,7 +163,8 @@ function Index() {
                     <CalendarClock className="h-4 w-4" /> {g.deadline}
                   </p>
                   <Link
-                    to="/grants"
+                    to="/grants/$slug"
+                    params={{ slug: g.slug }}
                     className="mt-3 block rounded-full border border-border py-2 text-center text-sm font-semibold text-brand-navy-deep hover:border-brand-green hover:text-brand-green"
                   >
                     Read More
@@ -172,6 +175,8 @@ function Index() {
           </div>
         </div>
       </section>
+
+      <FounderHighlight />
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 md:py-20">
         <div className="text-center">

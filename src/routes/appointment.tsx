@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { PageHero } from "@/components/PageHero";
 import { SERVICES } from "@/data/site";
+import { FounderHighlight } from "@/components/FounderHighlight";
 
 const title = "Book an Appointment with NGOGURU Consultants";
 const description =
@@ -67,6 +68,7 @@ function Appointment() {
           )}
         </form>
       </section>
+      <FounderHighlight compact />
     </>
   );
 }

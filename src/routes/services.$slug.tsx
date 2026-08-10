@@ -1,6 +1,16 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { CheckCircle2 } from "lucide-react";
 import { SERVICES, type Service } from "@/data/site";
+import { SupportCard } from "@/components/SupportCard";
+
+const DESK_BY_SERVICE: Record<string, string> = {
+  "ngo-registration": "registration",
+  "registration-affiliation-approvals": "registration",
+  "ngo-process-outsourcing": "ca",
+  "accounting-audit-assurance": "ca",
+  "funding-for-ngos": "funding",
+  "training-workshops": "csr",
+};
 
 export const Route = createFileRoute("/services/$slug")({
   loader: ({ params }): Service => {
@@ -103,6 +113,8 @@ function ServiceDetail() {
           </div>
         </div>
       </section>
+
+      <SupportCard deskId={DESK_BY_SERVICE[service.slug] ?? "registration"} serviceTitle={service.title} />
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
         <p className="eyebrow">Explore More</p>

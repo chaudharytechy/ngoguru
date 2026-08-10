@@ -12,12 +12,17 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as AppointmentRouteImport } from './routes/appointment'
-import { Route as BlogsRouteImport } from './routes/blogs'
 import { Route as ContactRouteImport } from './routes/contact'
-import { Route as GrantsRouteImport } from './routes/grants'
-import { Route as LawsRouteImport } from './routes/laws'
-import { Route as NewsRouteImport } from './routes/news'
+import { Route as FounderRouteImport } from './routes/founder'
 import { Route as SigninRouteImport } from './routes/signin'
+import { Route as BlogsIndexRouteImport } from './routes/blogs.index'
+import { Route as BlogsSlugRouteImport } from './routes/blogs.$slug'
+import { Route as GrantsIndexRouteImport } from './routes/grants.index'
+import { Route as GrantsSlugRouteImport } from './routes/grants.$slug'
+import { Route as LawsIndexRouteImport } from './routes/laws.index'
+import { Route as LawsSlugRouteImport } from './routes/laws.$slug'
+import { Route as NewsIndexRouteImport } from './routes/news.index'
+import { Route as NewsSlugRouteImport } from './routes/news.$slug'
 import { Route as ServicesIndexRouteImport } from './routes/services.index'
 import { Route as ServicesSlugRouteImport } from './routes/services.$slug'
 
@@ -36,34 +41,59 @@ const AppointmentRoute = AppointmentRouteImport.update({
   path: '/appointment',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BlogsRoute = BlogsRouteImport.update({
-  id: '/blogs',
-  path: '/blogs',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
-const GrantsRoute = GrantsRouteImport.update({
-  id: '/grants',
-  path: '/grants',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LawsRoute = LawsRouteImport.update({
-  id: '/laws',
-  path: '/laws',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const NewsRoute = NewsRouteImport.update({
-  id: '/news',
-  path: '/news',
+const FounderRoute = FounderRouteImport.update({
+  id: '/founder',
+  path: '/founder',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SigninRoute = SigninRouteImport.update({
   id: '/signin',
   path: '/signin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogsIndexRoute = BlogsIndexRouteImport.update({
+  id: '/blogs/',
+  path: '/blogs/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogsSlugRoute = BlogsSlugRouteImport.update({
+  id: '/blogs/$slug',
+  path: '/blogs/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GrantsIndexRoute = GrantsIndexRouteImport.update({
+  id: '/grants/',
+  path: '/grants/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GrantsSlugRoute = GrantsSlugRouteImport.update({
+  id: '/grants/$slug',
+  path: '/grants/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LawsIndexRoute = LawsIndexRouteImport.update({
+  id: '/laws/',
+  path: '/laws/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LawsSlugRoute = LawsSlugRouteImport.update({
+  id: '/laws/$slug',
+  path: '/laws/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NewsIndexRoute = NewsIndexRouteImport.update({
+  id: '/news/',
+  path: '/news/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NewsSlugRoute = NewsSlugRouteImport.update({
+  id: '/news/$slug',
+  path: '/news/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesIndexRoute = ServicesIndexRouteImport.update({
@@ -81,26 +111,36 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/appointment': typeof AppointmentRoute
-  '/blogs': typeof BlogsRoute
   '/contact': typeof ContactRoute
-  '/grants': typeof GrantsRoute
-  '/laws': typeof LawsRoute
-  '/news': typeof NewsRoute
+  '/founder': typeof FounderRoute
   '/signin': typeof SigninRoute
+  '/blogs/$slug': typeof BlogsSlugRoute
+  '/grants/$slug': typeof GrantsSlugRoute
+  '/laws/$slug': typeof LawsSlugRoute
+  '/news/$slug': typeof NewsSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
+  '/blogs/': typeof BlogsIndexRoute
+  '/grants/': typeof GrantsIndexRoute
+  '/laws/': typeof LawsIndexRoute
+  '/news/': typeof NewsIndexRoute
   '/services/': typeof ServicesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/appointment': typeof AppointmentRoute
-  '/blogs': typeof BlogsRoute
   '/contact': typeof ContactRoute
-  '/grants': typeof GrantsRoute
-  '/laws': typeof LawsRoute
-  '/news': typeof NewsRoute
+  '/founder': typeof FounderRoute
   '/signin': typeof SigninRoute
+  '/blogs/$slug': typeof BlogsSlugRoute
+  '/grants/$slug': typeof GrantsSlugRoute
+  '/laws/$slug': typeof LawsSlugRoute
+  '/news/$slug': typeof NewsSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
+  '/blogs': typeof BlogsIndexRoute
+  '/grants': typeof GrantsIndexRoute
+  '/laws': typeof LawsIndexRoute
+  '/news': typeof NewsIndexRoute
   '/services': typeof ServicesIndexRoute
 }
 export interface FileRoutesById {
@@ -108,13 +148,18 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/appointment': typeof AppointmentRoute
-  '/blogs': typeof BlogsRoute
   '/contact': typeof ContactRoute
-  '/grants': typeof GrantsRoute
-  '/laws': typeof LawsRoute
-  '/news': typeof NewsRoute
+  '/founder': typeof FounderRoute
   '/signin': typeof SigninRoute
+  '/blogs/$slug': typeof BlogsSlugRoute
+  '/grants/$slug': typeof GrantsSlugRoute
+  '/laws/$slug': typeof LawsSlugRoute
+  '/news/$slug': typeof NewsSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
+  '/blogs/': typeof BlogsIndexRoute
+  '/grants/': typeof GrantsIndexRoute
+  '/laws/': typeof LawsIndexRoute
+  '/news/': typeof NewsIndexRoute
   '/services/': typeof ServicesIndexRoute
 }
 export interface FileRouteTypes {
@@ -123,39 +168,54 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/appointment'
-    | '/blogs'
     | '/contact'
-    | '/grants'
-    | '/laws'
-    | '/news'
+    | '/founder'
     | '/signin'
+    | '/blogs/$slug'
+    | '/grants/$slug'
+    | '/laws/$slug'
+    | '/news/$slug'
     | '/services/$slug'
+    | '/blogs/'
+    | '/grants/'
+    | '/laws/'
+    | '/news/'
     | '/services/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
     | '/appointment'
-    | '/blogs'
     | '/contact'
+    | '/founder'
+    | '/signin'
+    | '/blogs/$slug'
+    | '/grants/$slug'
+    | '/laws/$slug'
+    | '/news/$slug'
+    | '/services/$slug'
+    | '/blogs'
     | '/grants'
     | '/laws'
     | '/news'
-    | '/signin'
-    | '/services/$slug'
     | '/services'
   id:
     | '__root__'
     | '/'
     | '/about'
     | '/appointment'
-    | '/blogs'
     | '/contact'
-    | '/grants'
-    | '/laws'
-    | '/news'
+    | '/founder'
     | '/signin'
+    | '/blogs/$slug'
+    | '/grants/$slug'
+    | '/laws/$slug'
+    | '/news/$slug'
     | '/services/$slug'
+    | '/blogs/'
+    | '/grants/'
+    | '/laws/'
+    | '/news/'
     | '/services/'
   fileRoutesById: FileRoutesById
 }
@@ -163,13 +223,18 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   AppointmentRoute: typeof AppointmentRoute
-  BlogsRoute: typeof BlogsRoute
   ContactRoute: typeof ContactRoute
-  GrantsRoute: typeof GrantsRoute
-  LawsRoute: typeof LawsRoute
-  NewsRoute: typeof NewsRoute
+  FounderRoute: typeof FounderRoute
   SigninRoute: typeof SigninRoute
+  BlogsSlugRoute: typeof BlogsSlugRoute
+  GrantsSlugRoute: typeof GrantsSlugRoute
+  LawsSlugRoute: typeof LawsSlugRoute
+  NewsSlugRoute: typeof NewsSlugRoute
   ServicesSlugRoute: typeof ServicesSlugRoute
+  BlogsIndexRoute: typeof BlogsIndexRoute
+  GrantsIndexRoute: typeof GrantsIndexRoute
+  LawsIndexRoute: typeof LawsIndexRoute
+  NewsIndexRoute: typeof NewsIndexRoute
   ServicesIndexRoute: typeof ServicesIndexRoute
 }
 
@@ -196,13 +261,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppointmentRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/blogs': {
-      id: '/blogs'
-      path: '/blogs'
-      fullPath: '/blogs'
-      preLoaderRoute: typeof BlogsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/contact': {
       id: '/contact'
       path: '/contact'
@@ -210,25 +268,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/grants': {
-      id: '/grants'
-      path: '/grants'
-      fullPath: '/grants'
-      preLoaderRoute: typeof GrantsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/laws': {
-      id: '/laws'
-      path: '/laws'
-      fullPath: '/laws'
-      preLoaderRoute: typeof LawsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/news': {
-      id: '/news'
-      path: '/news'
-      fullPath: '/news'
-      preLoaderRoute: typeof NewsRouteImport
+    '/founder': {
+      id: '/founder'
+      path: '/founder'
+      fullPath: '/founder'
+      preLoaderRoute: typeof FounderRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/signin': {
@@ -236,6 +280,62 @@ declare module '@tanstack/react-router' {
       path: '/signin'
       fullPath: '/signin'
       preLoaderRoute: typeof SigninRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blogs/': {
+      id: '/blogs/'
+      path: '/blogs'
+      fullPath: '/blogs/'
+      preLoaderRoute: typeof BlogsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blogs/$slug': {
+      id: '/blogs/$slug'
+      path: '/blogs/$slug'
+      fullPath: '/blogs/$slug'
+      preLoaderRoute: typeof BlogsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/grants/': {
+      id: '/grants/'
+      path: '/grants'
+      fullPath: '/grants/'
+      preLoaderRoute: typeof GrantsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/grants/$slug': {
+      id: '/grants/$slug'
+      path: '/grants/$slug'
+      fullPath: '/grants/$slug'
+      preLoaderRoute: typeof GrantsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/laws/': {
+      id: '/laws/'
+      path: '/laws'
+      fullPath: '/laws/'
+      preLoaderRoute: typeof LawsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/laws/$slug': {
+      id: '/laws/$slug'
+      path: '/laws/$slug'
+      fullPath: '/laws/$slug'
+      preLoaderRoute: typeof LawsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/news/': {
+      id: '/news/'
+      path: '/news'
+      fullPath: '/news/'
+      preLoaderRoute: typeof NewsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/news/$slug': {
+      id: '/news/$slug'
+      path: '/news/$slug'
+      fullPath: '/news/$slug'
+      preLoaderRoute: typeof NewsSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services/': {
@@ -259,13 +359,18 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   AppointmentRoute: AppointmentRoute,
-  BlogsRoute: BlogsRoute,
   ContactRoute: ContactRoute,
-  GrantsRoute: GrantsRoute,
-  LawsRoute: LawsRoute,
-  NewsRoute: NewsRoute,
+  FounderRoute: FounderRoute,
   SigninRoute: SigninRoute,
+  BlogsSlugRoute: BlogsSlugRoute,
+  GrantsSlugRoute: GrantsSlugRoute,
+  LawsSlugRoute: LawsSlugRoute,
+  NewsSlugRoute: NewsSlugRoute,
   ServicesSlugRoute: ServicesSlugRoute,
+  BlogsIndexRoute: BlogsIndexRoute,
+  GrantsIndexRoute: GrantsIndexRoute,
+  LawsIndexRoute: LawsIndexRoute,
+  NewsIndexRoute: NewsIndexRoute,
   ServicesIndexRoute: ServicesIndexRoute,
 }
 export const routeTree = rootRouteImport

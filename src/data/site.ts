@@ -9,6 +9,7 @@ export const CONTACT = {
 export const NAV_LINKS = [
   { label: "Home", to: "/" },
   { label: "About Us", to: "/about" },
+  { label: "Founder", to: "/founder" },
   { label: "Services", to: "/services" },
   { label: "Blogs", to: "/blogs" },
   { label: "NGO News", to: "/news" },
