@@ -38,7 +38,7 @@ function LawDetail() {
       />
       <section className="mx-auto max-w-5xl px-4 py-16 sm:px-6">
         <div className="grid gap-5 sm:grid-cols-2">
-          {law.sections.map((s) => (
+          {law.sections.map((s: { title: string; body: string }) => (
             <div key={s.title} className="card-surface p-6">
               <h2 className="text-base text-brand-navy-deep">{s.title}</h2>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.body}</p>

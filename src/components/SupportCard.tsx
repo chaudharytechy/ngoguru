@@ -10,7 +10,7 @@ export function SupportCard({
   deskId?: string;
   serviceTitle?: string;
 }) {
-  const desk: SupportDesk = SUPPORT_DESKS.find((d) => d.id === deskId) ?? SUPPORT_DESKS[0];
+  const desk = (SUPPORT_DESKS.find((d) => d.id === deskId) ?? SUPPORT_DESKS[0]) as SupportDesk;
   const [sent, setSent] = useState(false);
 
   return (

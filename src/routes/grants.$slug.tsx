@@ -52,7 +52,7 @@ function GrantDetail() {
           <div className="card-surface p-6">
             <h2 className="text-base text-brand-navy-deep">Eligibility</h2>
             <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
-              {grant.eligibility.map((e) => (
+              {grant.eligibility.map((e: string) => (
                 <li key={e} className="flex gap-2">
                   <FileText className="mt-0.5 h-4 w-4 shrink-0 text-brand-green" />
                   {e}
@@ -63,7 +63,7 @@ function GrantDetail() {
           <div className="card-surface p-6">
             <h2 className="text-base text-brand-navy-deep">Documents Required</h2>
             <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
-              {grant.documents.map((d) => (
+              {grant.documents.map((d: string) => (
                 <li key={d} className="flex gap-2">
                   <FileText className="mt-0.5 h-4 w-4 shrink-0 text-brand-green" />
                   {d}

@@ -33,7 +33,7 @@ function NewsDetail() {
       <PageHero eyebrow="NGO News" title={item.title} breadcrumb="Home / NGO News / Story" />
       <article className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
         <div className="space-y-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
-          {item.body.map((p) => (
+          {item.body.map((p: string) => (
             <p key={p}>{p}</p>
           ))}
         </div>
