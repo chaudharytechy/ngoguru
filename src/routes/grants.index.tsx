@@ -1,7 +1,7 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { CalendarClock, MapPin } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
-import { GRANTS } from "@/data/site";
+import { GRANT_ITEMS } from "@/data/details";
 
 const title = "Grants & Funding — Live EOIs and RFPs for NGOs | NGOGURU";
 const description =
@@ -31,8 +31,8 @@ function Grants() {
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
         <h2 className="text-2xl text-brand-navy-deep sm:text-3xl">On-Going Grants & Fundings</h2>
         <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {GRANTS.map((g) => (
-            <article key={g.title} className="overflow-hidden rounded-xl border border-border shadow-sm">
+          {GRANT_ITEMS.map((g) => (
+            <article key={g.slug} className="overflow-hidden rounded-xl border border-border shadow-sm">
               <div className="bg-brand-navy-deep p-5 text-primary-foreground">
                 <p className="text-[10px] font-bold tracking-[0.16em] text-brand-green-soft uppercase">
                   NGOGURU · Private Limited
@@ -49,12 +49,13 @@ function Grants() {
                 <p className="flex items-center gap-1.5 font-medium text-brand-green">
                   <CalendarClock className="h-4 w-4" /> {g.deadline}
                 </p>
-                <button
-                  type="button"
-                  className="mt-3 w-full rounded-full border border-border py-2 text-sm font-semibold text-brand-navy-deep hover:border-brand-green hover:text-brand-green"
+                <Link
+                  to="/grants/$slug"
+                  params={{ slug: g.slug }}
+                  className="mt-3 block w-full rounded-full border border-border py-2 text-center text-sm font-semibold text-brand-navy-deep hover:border-brand-green hover:text-brand-green"
                 >
                   Read More
-                </button>
+                </Link>
               </div>
             </article>
           ))}
