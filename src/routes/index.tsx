@@ -3,10 +3,35 @@ import { ArrowRight, CalendarClock, MapPin, Star } from "lucide-react";
 import { SERVICES, STATS, TESTIMONIALS } from "@/data/site";
 import { GRANT_ITEMS } from "@/data/details";
 import { FounderHighlight } from "@/components/FounderHighlight";
+import heroBg from "@/assets/hero-bg.jpg";
+import pillarFunding from "@/assets/pillar-funding.jpg";
+import pillarTech from "@/assets/pillar-tech.jpg";
+import pillarOneStop from "@/assets/pillar-onestop.jpg";
 
-const title = "NGOGURU — NGO Registration, Compliance & Funding Consultants";
+const title = "NGOGURU — Funding, Technology & Growth for NGOs and Startups";
 const description =
-  "NGOGURU helps Indian NGOs with registration, FCRA and 12A/80G compliance, accounting, audit and grant funding since 2013.";
+  "Funding, new technology and a one-stop compliance platform for NGOs, startups and enterprises — registration, FCRA, 12A/80G, audit and grants under one roof.";
+
+const PILLARS = [
+  {
+    img: pillarFunding,
+    tag: "Funding",
+    title: "Access to funding & investment",
+    body: "CSR partnerships, government schemes, institutional grants and investor-ready proposals — matched to your mission.",
+  },
+  {
+    img: pillarTech,
+    tag: "New Technology",
+    title: "AI, innovation & digital systems",
+    body: "AI-assisted proposal drafting, digital compliance dashboards and automation built for modern organisations.",
+  },
+  {
+    img: pillarOneStop,
+    tag: "One Stop Solution",
+    title: "Everything in one platform",
+    body: "Registration, accounting, audit, legal, HR and reporting — one connected team, one accountable partner.",
+  },
+];
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -23,20 +48,29 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <>
-      <section className="bg-brand-gradient">
+      <section className="relative isolate overflow-hidden bg-brand-navy-deep">
+        <img
+          src={heroBg}
+          alt=""
+          aria-hidden
+          width={1600}
+          height={900}
+          className="absolute inset-0 -z-10 h-full w-full object-cover opacity-60"
+        />
+        <div className="absolute inset-0 -z-10 bg-brand-gradient opacity-80" />
         <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:py-20 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
           <div>
             <p className="text-xs font-bold tracking-[0.2em] text-brand-green-soft uppercase">
-              NGO Consulting · Since 2013
+              Funding · Technology · One Stop Solution
             </p>
             <h1 className="mt-4 text-4xl leading-[1.1] text-primary-foreground sm:text-5xl lg:text-6xl">
-              We are helping <span className="text-brand-green-soft">millions of lives</span> to
-              flourish.
+              Funding. Technology. Growth.{" "}
+              <span className="text-brand-green-soft">All in One Place.</span>
             </h1>
             <p className="mt-5 max-w-xl text-sm leading-relaxed text-primary-foreground/80 sm:text-base">
-              Committed to efficient, effective and sustainable growth in the development sector —
-              from registration to reporting, NGOGURU carries the compliance load so your mission
-              doesn't have to slow down.
+              One connected platform for NGOs, startups and enterprises — access to funding,
+              AI-driven technology and every compliance service you need, delivered by India's
+              largest NGO service team.
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
               <Link
@@ -68,7 +102,9 @@ function Index() {
             <span className="inline-block rounded-full bg-brand-tint px-3 py-1 text-[10px] font-bold tracking-[0.18em] text-brand-green uppercase">
               Get Started
             </span>
-            <h2 className="mt-3 text-xl text-brand-navy-deep">Get Your NGO Registered</h2>
+            <h2 className="mt-3 text-xl text-brand-navy-deep">
+              Startups, NGOs & More — From Struggling to Successful
+            </h2>
             <p className="mt-1 text-xs text-muted-foreground">
               100% client satisfaction guaranteed · no hidden charges
             </p>
@@ -102,6 +138,41 @@ function Index() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 md:py-20">
+        <div className="text-center">
+          <p className="eyebrow">Our Three Pillars</p>
+          <h2 className="mt-2 text-3xl text-brand-navy-deep sm:text-4xl">
+            Built on Funding, Technology and One Stop Delivery
+          </h2>
+        </div>
+        <div className="mt-10 grid gap-6 md:grid-cols-3">
+          {PILLARS.map((p) => (
+            <article
+              key={p.tag}
+              className="card-surface group overflow-hidden p-0 transition-transform hover:-translate-y-1"
+            >
+              <div className="relative">
+                <img
+                  src={p.img}
+                  alt={p.title}
+                  loading="lazy"
+                  width={1024}
+                  height={768}
+                  className="h-48 w-full object-cover"
+                />
+                <span className="absolute bottom-3 left-3 rounded-full bg-brand-navy-deep/85 px-3 py-1 text-[11px] font-bold tracking-[0.14em] text-brand-green-soft uppercase">
+                  {p.tag}
+                </span>
+              </div>
+              <div className="p-6">
+                <h3 className="text-lg text-brand-navy-deep">{p.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.body}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 md:pb-20">
         <div className="text-center">
           <p className="eyebrow">What We Do</p>
           <h2 className="mt-2 text-3xl text-brand-navy-deep sm:text-4xl">Services</h2>

@@ -3,6 +3,9 @@ import { Award, CheckCircle2, Trophy } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
 import { SupportCard } from "@/components/SupportCard";
 import { FOUNDER, WORLD_RECORDS } from "@/data/founder";
+import founderPhoto from "@/assets/ca-rajesh.png.asset.json";
+
+const CEO_PORTRAIT = "https://res.cloudinary.com/dixkibd74/image/upload/v1725276787/t2whvze1bixoccztmqmn.png";
 
 const title = "CA Rajesh Kumar Verma — Founder, NGO Guru";
 const description =
@@ -33,6 +36,20 @@ function Founder() {
       />
 
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6">
+        <div className="mb-10 grid gap-5 sm:grid-cols-2">
+          <img
+            src={CEO_PORTRAIT}
+            alt={`Portrait of ${FOUNDER.name}`}
+            loading="lazy"
+            className="h-72 w-full rounded-2xl object-cover object-top shadow-lg sm:h-80"
+          />
+          <img
+            src={founderPhoto.url}
+            alt={`${FOUNDER.name} addressing an NGOGURU seminar`}
+            loading="lazy"
+            className="h-72 w-full rounded-2xl object-cover shadow-lg sm:h-80"
+          />
+        </div>
         <ul className="flex flex-wrap gap-2">
           {FOUNDER.credentials.map((c) => (
             <li
