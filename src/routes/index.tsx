@@ -3,7 +3,8 @@ import { ArrowRight, CalendarClock, MapPin, Star } from "lucide-react";
 import { SERVICES, STATS, TESTIMONIALS } from "@/data/site";
 import { GRANT_ITEMS } from "@/data/details";
 import { FounderHighlight } from "@/components/FounderHighlight";
-import heroBg from "@/assets/hero-bg.jpg";
+import heroVideo from "@/assets/hero-tech.mp4.asset.json";
+import heroPoster from "@/assets/hero-tech-poster.jpg.asset.json";
 import pillarFunding from "@/assets/pillar-funding.jpg";
 import pillarTech from "@/assets/pillar-tech.jpg";
 import pillarOneStop from "@/assets/pillar-onestop.jpg";
@@ -49,15 +50,19 @@ function Index() {
   return (
     <>
       <section className="relative isolate overflow-hidden bg-brand-navy-deep">
-        <img
-          src={heroBg}
-          alt=""
+        <video
+          src={heroVideo.url}
+          poster={heroPoster.url}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
           aria-hidden
-          width={1600}
-          height={900}
-          className="absolute inset-0 -z-10 h-full w-full object-cover opacity-60"
+          className="absolute inset-0 -z-10 h-full w-full object-cover opacity-70"
         />
-        <div className="absolute inset-0 -z-10 bg-brand-gradient opacity-80" />
+        <div className="absolute inset-0 -z-10 bg-brand-gradient opacity-75" />
+        <div className="absolute inset-0 -z-10 bg-brand-navy-deep/35" />
         <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:py-20 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
           <div>
             <p className="text-xs font-bold tracking-[0.2em] text-brand-green-soft uppercase">
