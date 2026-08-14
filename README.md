@@ -1,14 +1,20 @@
-# Welcome to your Lovable project
+# Client Connect Hub
+
+Create this pdf into  client side webvbsite use React js , for styling use  tailwind 
+also design chatbot , after open ask to select services , Ca-or Accounting support IT support , CSR support like and then open diffrent diffrent contact number  with detail  
+And In navbar  remove our  word , make fully responsive ,
 
 This project was built with [Lovable](https://lovable.dev).
 
+**Live app**: https://ngoguru.lovable.app
+
 ## Build with Lovable
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/9cc986c1-6be7-4424-8400-5531fc248ec1).
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 
@@ -20,10 +26,3 @@ cd <repository-name>
 npm i
 npm run dev
 ```
-
-## Built with
-
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
