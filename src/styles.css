@@ -20,8 +20,8 @@
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
-  --font-display: "Playfair Display", Georgia, serif;
-  --font-sans: "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
   --color-brand-navy: var(--brand-navy);
   --color-brand-navy-deep: var(--brand-navy-deep);
   --color-brand-green: var(--brand-green);
@@ -147,6 +147,10 @@
 }
 
 @layer base {
+  html {
+    font-size: 105%;
+  }
+
   * {
     border-color: var(--color-border);
   }
