@@ -1,16 +1,21 @@
 import { Link } from "@tanstack/react-router";
 import { Award, CheckCircle2, Trophy } from "lucide-react";
 import { FOUNDER, WORLD_RECORDS } from "@/data/founder";
+import founderPhoto from "@/assets/ca-rajesh.png.asset.json";
 
 export function FounderHighlight({ compact = false }: { compact?: boolean }) {
   return (
     <section className={compact ? "bg-brand-tint" : "bg-background"}>
       <div className="mx-auto grid max-w-7xl gap-8 px-4 py-16 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
-        <div className="rounded-2xl bg-brand-gradient p-7 text-primary-foreground">
-          <span className="flex h-16 w-16 items-center justify-center rounded-full bg-primary-foreground/15 font-display text-xl font-bold">
-            {FOUNDER.initials}
-          </span>
-          <h3 className="mt-4 text-2xl">{FOUNDER.name}</h3>
+        <div className="overflow-hidden rounded-2xl bg-brand-gradient text-primary-foreground">
+          <img
+            src={founderPhoto.url}
+            alt={`${FOUNDER.name}, ${FOUNDER.role}`}
+            loading="lazy"
+            className="h-64 w-full object-cover object-[60%_30%]"
+          />
+          <div className="p-7">
+          <h3 className="text-2xl">{FOUNDER.name}</h3>
           <p className="mt-1 text-xs font-bold tracking-[0.16em] text-brand-green-soft uppercase">
             {FOUNDER.role}
           </p>
@@ -33,6 +38,7 @@ export function FounderHighlight({ compact = false }: { compact?: boolean }) {
           >
             Read Full Profile →
           </Link>
+          </div>
         </div>
 
         <div>
