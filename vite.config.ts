@@ -11,5 +11,27 @@ export default defineConfig({
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
     server: { entry: "server" },
+    // Static export: pre-render every static page to real .html files so the
+    // build output (.output/public) can be uploaded to plain static hosting
+    // (e.g. MilesWeb cPanel / shared hosting) without a running server.
+    // Dynamic $slug routes are NOT listed — they render client-side via the
+    // router when navigated to from their listing pages.
+    prerender: {
+      enabled: true,
+      autoStaticPathsDiscovery: false,
+    },
+    pages: [
+      { path: "/" },
+      { path: "/about" },
+      { path: "/appointment" },
+      { path: "/contact" },
+      { path: "/founder" },
+      { path: "/signin" },
+      { path: "/services" },
+      { path: "/blogs" },
+      { path: "/news" },
+      { path: "/grants" },
+      { path: "/laws" },
+    ],
   },
 });
